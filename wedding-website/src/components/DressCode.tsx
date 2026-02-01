@@ -51,7 +51,7 @@ const DressCode = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Мы будем рады видеть вас в нежных, пастельных тонах
+          Мы будем рады видеть вас в подобранной цветовой гамме
         </motion.p>
 
         <div className={styles.grid}>
