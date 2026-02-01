@@ -1,5 +1,18 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
+/**
+ * Supabase Client Configuration
+ * 
+ * ⚠️ ВАЖНО: Используем anon key на фронтенде - это НОРМАЛЬНО и БЕЗОПАСНО!
+ * 
+ * Почему это безопасно:
+ * 1. Anon key - публичный ключ, предназначен для клиентских приложений
+ * 2. Безопасность обеспечивается через Row Level Security (RLS) политики
+ * 3. Anon key имеет ограниченные права и может делать только то, что разрешено через RLS
+ * 
+ * ❌ НИКОГДА не используйте service_role key на фронтенде!
+ * Service role key обходит RLS и имеет полный доступ - только для серверных приложений!
+ */
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
